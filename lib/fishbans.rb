@@ -116,10 +116,11 @@ module Fishbans
     url = URI.encode(url)
     uri = URI.parse(url)
     response = @client.get(uri)
-    if response['success']
-      return JSON.parse(response.body)
+    json = JSON.parse(response.body)
+    if json['success']
+      return json
     else
-      return response['error']
+      return json['error']
     end
   end
 
