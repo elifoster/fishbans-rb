@@ -1,7 +1,12 @@
 require 'httpclient'
 require 'json'
+require_relative 'block_engine'
+require_relative 'player_skins'
 
 module Fishbans
+  include BlockEngine
+  include PlayerSkins
+
   extend self
   @client = HTTPClient.new
   @services = [
@@ -109,13 +114,16 @@ module Fishbans
   end
 
   private
+
   # Performs a basic GET request.
   # @param url [String] The URL to get.
+  # @param do_json [Boolean] Whether to parse the JSON.
   # @return [JSON/String] The parsed JSON of the response, or the error string.
-  def get(url)
+  def get(url, do_json = true)
     url = URI.encode(url)
     uri = URI.parse(url)
     response = @client.get(uri)
+    return response if do_json == false
     json = JSON.parse(response.body)
     if json['success']
       return json
@@ -141,6 +149,6 @@ module Fishbans
     end
 
     return nil if ret.empty?
-    return ret
+    ret
   end
 end
