@@ -1,4 +1,6 @@
 # fishbans-rb
+[![Gem Version](https://badge.fury.io/rb/fishbans.svg)](https://badge.fury.io/rb/fishbans)
+
 A Ruby Gem for the Fishbans Minecraft API
 
 ## Installation
@@ -20,8 +22,4 @@ $ bundle
 ```
 
 ## Documentation
-Please see the [Wiki](https://github.com/elifoster/fishbans-rb/wiki) for feature lists, documentation, and guides.
-
-You can also view the [RubyDocs](http://www.rubydoc.info/gems/fishbans) but they are more limited.
-
-You can also view the documentation in the code, which would probably be fastest for you anyway.
+Please see the [RubyDocs](http://www.rubydoc.info/gems/fishbans).
