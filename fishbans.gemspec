@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.authors = ['Eli Foster']
   s.name = 'fishbans'
   s.summary = 'A Ruby gem for accessing the Fishbans Minecraft API.'
-  s.version = '1.1.3'
+  s.version = '1.1.4'
   s.license = 'MIT'
   s.description = 'Accessing the Fishbans Minecraft API through HTTPClient. ' \
                   'Has methods for all Fishban APIs, including the APIs for ' \

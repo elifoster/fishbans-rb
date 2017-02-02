@@ -1,5 +1,8 @@
 # Changelog
 ## Version 1
+### Version 1.1.4
+* Remove a couple unnecessary things from the PlayerSkins and BlockEngine (is_a? check and downcase).
+
 ### Version 1.1.3
 * Use pessimistic version requirements.
 * Bump HTTPClient version.
