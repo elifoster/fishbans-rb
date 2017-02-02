@@ -29,7 +29,7 @@ module Fishbans
     #   this will not be perfect just by nature of the API.
     # @return [ChunkyPNG::Image] The ChunkyPNG instance of that monster image.
     def get_monster(id, three = false, size = 42)
-      id = id.to_s unless id.is_a?(String)
+      id = id.to_s
       url = 'http://blocks.fishbans.com'
       url += "/#{id}" if id =~ /^m/
       url += "/m#{id}" if id !~ /^m/
