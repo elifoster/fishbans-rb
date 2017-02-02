@@ -36,7 +36,6 @@ module Fishbans
     # @param size [Fixnum] See #get_player_head.
     # @return [ChunkyPNG::Image] The ChunkyPNG::Image instance for the params.
     def get_player_image(username, type, size)
-      type.downcase
       url = "http://i.fishbans.com/#{type}/#{username}/#{size}"
       response = get(url, false)
       ChunkyPNG::Image.from_blob(response.body)
