@@ -6,8 +6,8 @@ module Fishbans
     # Gets a block image by its ID and Metadata. Unfortunately it uses the old
     #   block IDs rather than the new ones, so you have to memorize those
     #   pesky integers.
-    # @param id [Fixnum] The (outdated) block ID number.
-    # @param metadata [Fixnum] The metadata, if any, for the block.
+    # @param id [Integer] The (outdated) block ID number.
+    # @param metadata [Integer] The metadata, if any, for the block.
     # @param size [Fixnum] The size of the image to get.
     # @return [ChunkyPNG::Image] The ChunkyPNG instance of that block image.
     def get_block(id, metadata = nil, size = 42)
@@ -25,7 +25,7 @@ module Fishbans
     # @param three [Boolean] Whether to get a three-dimensional monster image.
     #   The three-dimensional image is of the full monster, while the
     #   two-dimensional image is just its head.
-    # @param size [Fixnum] The size of the image (width) to get. For 3D images
+    # @param size [Integer] The size of the image (width) to get. For 3D images
     #   this will not be perfect just by nature of the API.
     # @return [ChunkyPNG::Image] The ChunkyPNG instance of that monster image.
     def get_monster(id, three = false, size = 42)

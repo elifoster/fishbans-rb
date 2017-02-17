@@ -55,7 +55,7 @@ module Fishbans
 
   # Gets the total number of bans that the user has.
   # @param username [String] The username to check.
-  # @return [Int/String] The number of bans the user has. An error string if the
+  # @return [Integer/String] The number of bans the user has. An error string if the
   #   request failed.
   def get_total_bans(username)
     response = get("http://api.fishbans.com/stats/#{username}")
@@ -70,7 +70,7 @@ module Fishbans
   # @param username [String] The username to check.
   # @param service [String] The service to check. Can be any of the values in
   #   the @services array.
-  # @return [Int/Boolean/String] False if the service is not an accepted value.
+  # @return [Integer/Boolean/String] False if the service is not an accepted value.
   #   An int containing the number of bans the user has in the given service. An
   #   error string if the request failed.
   def get_total_bans_service(username, service)
