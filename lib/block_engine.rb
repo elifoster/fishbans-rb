@@ -10,6 +10,7 @@ module Fishbans
     # @param metadata [Integer] The metadata, if any, for the block.
     # @param size [Fixnum] The size of the image to get.
     # @return [ChunkyPNG::Image] The ChunkyPNG instance of that block image.
+    # @raise see #get
     def get_block(id, metadata = nil, size = 42)
       url = "http://blocks.fishbans.com/#{id}"
       url += "-#{metadata}" unless metadata.nil?
@@ -28,6 +29,7 @@ module Fishbans
     # @param size [Integer] The size of the image (width) to get. For 3D images
     #   this will not be perfect just by nature of the API.
     # @return [ChunkyPNG::Image] The ChunkyPNG instance of that monster image.
+    # @raise see #get
     def get_monster(id, three = false, size = 42)
       id = id.to_s
       url = 'http://blocks.fishbans.com'

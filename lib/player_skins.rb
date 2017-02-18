@@ -7,6 +7,7 @@ module Fishbans
     # @param username [String] The username to get the head of.
     # @param size [Integer] The width of the image to get.
     # @return [ChunkyPNG::Image] The ChunkyPNG::Image instance of that head.
+    # @raise see #get
     def get_player_head(username, size = 100)
       get_player_image(username, 'helm', size)
     end
@@ -15,6 +16,7 @@ module Fishbans
     # @param username [String] See #get_player_head.
     # @param size [Integer] See #get_player_head.
     # @return [ChunkyPNG::Image] The ChunkyPNG::Image instance of that front.
+    # @raise see #get
     def get_player_front(username, size = 100)
       get_player_image(username, 'player', size)
     end
@@ -23,6 +25,7 @@ module Fishbans
     # @param username [String] See #get_player_head.
     # @param size [Integer] See #get_player_head.
     # @return [ChunkyPNG::Image] The ChunkyPNG::Image instance of that skin.
+    # @raise see #get
     def get_player_skin(username, size = 64)
       get_player_image(username, 'skin', size)
     end
@@ -35,6 +38,7 @@ module Fishbans
     #   'skin' as defined by the Fishbans Player Skins API.
     # @param size [Integer] See #get_player_head.
     # @return [ChunkyPNG::Image] The ChunkyPNG::Image instance for the params.
+    # @raise see #get
     def get_player_image(username, type, size)
       url = "http://i.fishbans.com/#{type}/#{username}/#{size}"
       response = get(url, false)
