@@ -9,7 +9,7 @@ module Fishbans
 
   extend self
   @client = HTTPClient.new
-  @services = [
+  SERVICES = [
     'mcbouncer',
     'minebans',
     'glizer',
@@ -35,7 +35,7 @@ module Fishbans
   def get_ban_service(username, service)
     service.downcase!
 
-    if @services.include? service
+    if SERVICES.include? service
       response = get("http://api.fishbans.com/bans/#{username}/#{service}")
       parse_generic_ban_result(response)[service]
     else
@@ -55,14 +55,14 @@ module Fishbans
   # Gets the total number of bans by service that the user has.
   # @param username [String] The username to check.
   # @param service [String] The service to check. Can be any of the values in
-  #   the @services array.
+  #   the SERVICES array.
   # @return [Boolean] False if the service is not an accepted value.
   # @return [Integer] The number of bans the user has in the given service. See SERVICES for valid services.
   # @raise see #get
   def get_total_bans_service(username, service)
     service.downcase!
 
-    if @services.include?(service)
+    if SERVICES.include?(service)
       # Note that the /service part is not necessary, but it slightly improves
       #   performance of the API.
       response = get("http://api.fishbans.com/stats/#{username}/#{service}")
